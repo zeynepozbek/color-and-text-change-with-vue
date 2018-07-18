@@ -1,16 +1,28 @@
 var webpack = require("webpack");
-var path = require("path");
+const path = require("path");
 
-var DIST_DIR = path.resolve(__dirname, "dist");
-var SRC_DIR = path.resolve(__dirname, "src");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-var config ={
-    entry: SRC_DIR + "/app.js",
+const DIST_DIR = path.resolve(__dirname, "dist");
+const SRC_DIR = path.resolve(__dirname, "src");
+const SRC_JS = path.resolve(__dirname, "src/js");
+const SRC_SCSS = path.resolve(__dirname, "src/scss");
+
+const config ={
+    entry: [ SRC_JS + '/app.js', SRC_SCSS + '/style.scss'],
     output:{
         path: DIST_DIR + "/src",
-        filename: "bundle.js",
+        // filename: "bundle.js", "bundle.css",
         publicPath: "/src/"
     },
+    plugins: [
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "dist/[name].bundle.css",
+            allChunks: true,
+        })
+    ],
     module: {
         rules:[
             {
@@ -20,6 +32,16 @@ var config ={
                 query: {
                     presets: ["es2017"]
                 }
+            },
+            {
+                test: /\.(css|sass|scss)$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
+                    "css-loader",
+                    "sass-loader"
+                ]
             }
         ]
     }
