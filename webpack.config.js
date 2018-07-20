@@ -11,15 +11,15 @@ const SRC_SCSS = path.resolve(__dirname, "src/scss");
 const config ={
     entry: [ SRC_JS + '/app.js', SRC_SCSS + '/style.scss'],
     output:{
-        path: DIST_DIR + "/src",
+        path: DIST_DIR,
         // filename: "bundle.js", "bundle.css",
-        publicPath: "/src/"
+        //publicPath: DIST_DIR
     },
     plugins: [
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: "dist/[name].bundle.css",
+            filename: "css/[name].bundle.css",
             allChunks: true,
         })
     ],

@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start:dev": "webpack-dev-server",
-    "build": "webpack -d && cp index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
+    "start:dev": "webpack-dev-server --content-base bundle",
+    "build": "webpack -d && cp index.html dist/index.html && webpack-dev-server --content-base dist/ --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
