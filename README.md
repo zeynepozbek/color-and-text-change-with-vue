@@ -1,5 +1,5 @@
 # webpack-template
-webpack template
+Responsive Horizontal Product Card
 
 * npm install
 * npm run build
