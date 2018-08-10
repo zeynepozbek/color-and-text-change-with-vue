@@ -1,52 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Responsive Horizontal Product Card</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.bundle.css">
-    <script src="/bundle.js"></script></head>
-
+    <title>Vue</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/vue-swatches/dist/vue-swatches.min.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-color/2.2.3/vue-color.js"></script>
+    <script src="app.js"></script>
+</head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h3>Responsive Horizontal Product Card</h3>
-            </div>
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-media">
-                        <a href="#">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/61pmrFT-M7L._AC_US218_.jpg" alt="product name">
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="#">
-                                Fujifilm instax mini 9 Instant Film Camera (Cobalt Blue) + Fujifilm Instax Mini Twin Pack Instant Film (80 Shots) + Camera Case + AA Batteries + Accessory Bundle -
-                            </a>
-                        </h5>
-                        <p class="card-text">
-                            With supporting text below as a natural lead-in to additional content.
-                            <small>
-                                FREE Shipping on eligible orders
-                            </small>
-                        </p>
-                        <div class="card-footer">
-                            <div class="card-price">
-                                $ 199.99
-                                <small>Small Text</small>
-                            </div>
-                            <div class="card-btn">
-                                <a href="#" class="btn btn-primary">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
 
+<div id="app">
+    <div class="container">
+
+        <div class="picker">
+            <input id="fg-color" v-on:focus="isOpen = false" type="text" maxlength="7" v-model="colors.hex" />
+            <button class="fg-color-sample" v-on:click="toggle" v-bind:style="{ background: colors.hex }"></button>
+        </div>
+        <chrome-picker v-show="isOpen" v-model="colors" ></chrome-picker>
+
+
+        <input v-model="message" placeholder="Your Name">
+
+
+        <div class="panda panda-variable-color">
+            <div class="ear ear--left panda-variable-color" v-bind:style="{ background: colors.hex  }"></div>
+            <div class="ear ear--right panda-variable-color" v-bind:style="{ background: colors.hex }"></div>
+            <div class="eye eye--left" v-bind:style="{ background: colors.hex }"></div>
+            <div class="eye eye--right" v-bind:style="{ background: colors.hex }"></div>
+            <div class="nose" v-bind:style="{ background: colors.hex }"></div>
+            <div class="mouth" v-bind:style="{ background: colors.hex }"></div>
+            <div class="bamboo-stem"></div>
+            <div class="hand hand--left panda-variable-color" v-bind:style="{ background: colors.hex }"></div>
+            <div class="hand hand--right panda-variable-color" v-bind:style="{ background: colors.hex }"></div>
+            <p>Seni biliyorum <br> {{ message }}</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
 </html>

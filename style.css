@@ -1,0 +1,211 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #5f4d93;
+    background: linear-gradient(0deg, #5f4d93 20%, #6a56a4 50%, #5f4d93 80%);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.centerTopBottom, .panda {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.container {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.panda {
+    position: absolute;
+    width: 150px;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    background-color: #fff;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+50,111111+50 */
+    background: #ffffff;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #fff 60%, #444 760%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fff 7%, #444 70%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fff 70%, #444 70%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-radius: 50px 50px 10px 10px;
+}
+
+.ear {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #444;
+    top: -15px;
+    z-index: -1;
+}
+
+.ear--left {
+    left: -18px;
+    border-radius: 50px 50px 20px 40px;
+}
+
+.ear--right {
+    right: -18px;
+    border-radius: 50px 50px 40px 20px;
+}
+
+.eye {
+    position: absolute;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #444;
+}
+
+.eye--left {
+    border-radius: 50px 30px 50px 40px;
+    left: 10px;
+}
+
+.eye--right {
+    right: 10px;
+    border-radius: 30px 50px 40px 50px;
+}
+
+.eye:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.eye--left:after {
+    right: 10px;
+}
+
+.eye--right:after {
+    left: 10px;
+}
+
+.nose {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #444;
+}
+
+.mouth {
+    position: absolute;
+    width: 4px;
+    height: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 80px;
+    background-color: #444;
+    z-index: 2;
+}
+.mouth:after, .mouth:before {
+    content: '';
+    position: absolute;
+    border: 2px solid #444;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-top: 0;
+    bottom: -42%;
+    width: 20px;
+    height: 10px;
+}
+.mouth:before {
+    left: 41%;
+}
+.mouth:after {
+    right: 40%;
+}
+
+.hand {
+    position: absolute;
+    top: 150px;
+    width: 50px;
+    height: 30px;
+    background-color: #444;
+}
+.hand--left {
+    border-radius: 10px 20px 30px 40px;
+    left: 5px;
+    transform: rotate(15deg);
+}
+.hand--right {
+    border-radius: 20px 10px 40px 30px;
+    right: 5px;
+    transform: rotate(-15deg);
+}
+
+.bamboo-stem {
+    width: 4px;
+    height: 30px;
+    transform: rotate(40deg);
+    position: absolute;
+    top: 130px;
+    left: 40px;
+    background-color: green;
+}
+
+
+.vue-color__chrome__alpha-wrap,
+.vue-color__chrome__toggle-btn,
+.vue-color__chrome__fields-wrap,
+.vue-color__chrome__color-wrap {
+    display: none !important;
+}
+
+.vue-color__chrome__controls {
+    align-items: center;
+}
+
+.vue-color__chrome__active-color {
+    margin-top: 0;
+}
+
+#fg-color {
+    height: 35px;
+    flex: 1;
+}
+
+.fg-color-sample {
+    display: inline-block;
+    width: 37px;
+    border: none;
+}
+
+.picker {
+    display: flex;
+    justify-content: justify;
+}
+
+#colorpicker {
+    max-width: 225px;
+}
+
