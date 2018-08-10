@@ -1,5 +1,5 @@
-# webpack-template
-Responsive Horizontal Product Card
+# Vue.js Example 1
+color and text change with vue.js
 
 * npm install
 * npm run build
