@@ -13,27 +13,33 @@
 <div id="app">
     <div class="container">
 
-        <div class="picker">
-            <input id="fg-color" v-on:focus="isOpen = false" type="text" maxlength="7" v-model="colors.hex" />
-            <button class="fg-color-sample" v-on:click="toggle" v-bind:style="{ background: colors.hex }"></button>
+        <div class="left">
+            <div class="form">
+                <label class="form-label">İsminizi yazınız</label>
+                <input v-model="message" placeholder="Your Name">
+
+                <label class="form-label">Pandanın rengini seçiniz</label>
+                <div class="picker">
+                    <input id="fg-color" v-on:focus="isOpen = false" type="text" maxlength="7" v-model="colors.hex" />
+                    <button class="fg-color-sample" v-on:click="toggle" v-bind:style="{ background: colors.hex }"></button>
+                </div>
+                <chrome-picker v-show="isOpen" v-model="colors" ></chrome-picker>
+            </div>
         </div>
-        <chrome-picker v-show="isOpen" v-model="colors" ></chrome-picker>
 
-
-        <input v-model="message" placeholder="Your Name">
-
-
-        <div class="panda panda-variable-color">
-            <div class="ear ear--left panda-variable-color" v-bind:style="{ background: colors.hex  }"></div>
-            <div class="ear ear--right panda-variable-color" v-bind:style="{ background: colors.hex }"></div>
-            <div class="eye eye--left" v-bind:style="{ background: colors.hex }"></div>
-            <div class="eye eye--right" v-bind:style="{ background: colors.hex }"></div>
-            <div class="nose" v-bind:style="{ background: colors.hex }"></div>
-            <div class="mouth" v-bind:style="{ background: colors.hex }"></div>
-            <div class="bamboo-stem"></div>
-            <div class="hand hand--left panda-variable-color" v-bind:style="{ background: colors.hex }"></div>
-            <div class="hand hand--right panda-variable-color" v-bind:style="{ background: colors.hex }"></div>
-            <p>Seni biliyorum <br> {{ message }}</p>
+        <div class="right">
+            <div class="panda panda-variable-color">
+                <div class="ear ear--left panda-variable-color" v-bind:style="{ background: colors.hex  }"></div>
+                <div class="ear ear--right panda-variable-color" v-bind:style="{ background: colors.hex }"></div>
+                <div class="eye eye--left" v-bind:style="{ background: colors.hex }"></div>
+                <div class="eye eye--right" v-bind:style="{ background: colors.hex }"></div>
+                <div class="nose" v-bind:style="{ background: colors.hex }"></div>
+                <div class="mouth" v-bind:style="{ background: colors.hex }"></div>
+                <div class="bamboo-stem"></div>
+                <div class="hand hand--left panda-variable-color" v-bind:style="{ background: colors.hex }"></div>
+                <div class="hand hand--right panda-variable-color" v-bind:style="{ background: colors.hex }"></div>
+                <p>Mutlu Yıllar <br> {{ message }}</p>
+            </div>
         </div>
 
     </div>
